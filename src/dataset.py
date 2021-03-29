@@ -65,9 +65,9 @@ class CellDataset(Dataset):
     def get_image(self, index):
         _id = self.img_ids[index % self.__len__()]
         red_path = os.path.join(self.data_dir, 'train_images', _id + '_red.png')
-        green_path = red_path.replace('_res.png', '_green.pnd')
-        blue_path = red_path.replace('_res.png', '_blue.pnd')
-        yellow_path = red_path.replace('_res.png', '_yellow.pnd')
+        green_path = red_path.replace('_red.png', '_green.png')
+        blue_path = red_path.replace('_red.png', '_blue.png')
+        yellow_path = red_path.replace('_red.png', '_yellow.png')
 
         img_red = cv2.imread(red_path, 0)
         img_green = cv2.imread(green_path, 0)
